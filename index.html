@@ -1,0 +1,150 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="style.css" />
+
+		<title>Frontend Mentor | Mortgage repayment calculator</title>
+	</head>
+	<body>
+		<div class="container">
+			<!-- INPUTS  -->
+			<div class="input-fields-container">
+			 <form action=""> 
+				<div class="header-box">
+					<div class="header-txt">Mortgage Calculator</div>
+					<button type="button" class="clr-All" id="clr-All">Clear All</button>
+				</div>
+
+				<div class="label-wrapper">
+					<label for="amount" class="amount">
+						Mortgage Amount
+						<div class="input-wrapper">
+							<span class="euro">&euro;</span>
+							<input
+								type="number"
+								class="input"
+								id="mortgage-amount"
+								required
+							/>
+						</div>
+						<div class="error" id="amount-err">This field is required</div>
+					</label>
+				</div>
+
+				<div class="label-wrapper split-input">
+					<label for="">
+						Mortgage Term
+						<div class="input-wrapper">
+							<input type="number" class="input" id="mortgage-term" required />
+							<span class="years">years</span>
+						</div>
+						<div class="error" id="term-err">This field is required</div>
+					</label>
+					<label for="">
+						Interest Rate
+						<div class="input-wrapper">
+							<input type="number" class="input" id="interest-rate" required />
+							<span class="percentage">&percnt;</span>
+						</div>
+						<div class="error" id="interest-err">This field is required</div>
+					</label>
+				</div>
+
+				<div class="label-wrapper">
+					<label for="" class="radio-inputs">
+						Mortgage Type
+						<div class="input-wrapper">
+							<input type="radio" id="repayment" />
+							<div class="radio-txt">Repayment</div>
+						</div>
+						<div class="input-wrapper">
+							<input type="radio" id="interest" />
+							<div class="radio-txt">Interest Only</div>
+						</div>
+						<div class="error" id="radio-err">This field is required</div>
+					</label>
+				</div>
+
+				<div class="button-wrapper">
+					<button type="submit" class="submit" id="submit">
+						<span class="svg-image"
+							><img src="./assets/images/icon-calculator.svg" alt=""
+						/></span>
+						calculate Repayments
+					</button>
+				</div>
+			</div>
+		 </form> 
+
+
+			<!-- RESULT -->
+			<div class="result-container">
+				<div class="display">
+					<div class="default-display">
+						<div class="icon-svg">
+							<img src="./assets/images/illustration-empty.svg" alt="" />
+						</div>
+						<div class="text">
+							<div class="head-text">Result shown here</div>
+							<p class="txt-details">
+								Complete the form and click "calculate repayments" to see what
+								your monthly repayments would be.
+							</p>
+						</div>
+					</div>
+
+					<div class="complete-state-display">
+						<div class="text">
+							<div class="head-text">Your result</div>
+							<p class="txt-details">
+								Your result are shown below based on the information you
+								provided. To adjust the result, edit the form and click
+								"calculate repayments" again.
+							</p>
+						</div>
+
+						<div class="result-display">
+							<div class="topper"></div>
+							<div class="wrapper">
+								<div class="monthly-result-display">
+									<p class="result-txt">Your monthly repayments</p>
+									<p class="monthly-result" id="monthly-result">1779.79</p>
+								</div>
+
+								<div class="term-result-display">
+									<p class="result-txt">Total you'll repay over the term</p>
+									<p class="term-result" id="total-repayment">1779.79</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="attribution">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+			Coded by <a href="https://github.com/herdhebayor">Adebayo sikiru temitope</a>.
+		</div>
+		<script src="clac.js"></script>
+	</body>
+</html>
