@@ -45,6 +45,8 @@ function calculateInterest() {
 		totalInterest.toFixed(4) + ' %'
 }
 
+
+
 radioRepayment.parentElement.addEventListener('click', () => {
 	radioRepayment.checked = true
 	radioInterest.checked = false
@@ -100,6 +102,18 @@ submitBtn.addEventListener('click', (e) => {
 })
 
 
-document.getElementById('clr-All').addEventListener('click', ()=>{
+document.getElementById('clr-All').addEventListener('click', function resetAll(){
+	let activeElement = document.querySelectorAll('.input-wrapper')
+	for(let i = 0; i < activeElement.length; i++){
+		if(activeElement[i].classList.contains('active')){
+			activeElement[i].classList.remove('active')
+			checkboxIsChecked = false
+		}
+	}
 	document.querySelector('form').reset();
+	document.getElementById('amount-err').style.display = 'none'
+	document.getElementById('term-err').style.display = 'none'
+	document.getElementById('interest-err').style.display = 'none'
+	document.querySelector('.complete-state-display').style.display = 'none'
+	document.querySelector('.default-display').style.display = 'block'
 })
